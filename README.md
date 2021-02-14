@@ -65,7 +65,7 @@ categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, 
   for Edit Text prefernce you enter:
   SETTINGS_TYPE_EDIT_TEXT, key(explained above), defualt value(optional can be null) ,title ,summary(optional can be null), 
   input type(Inputtype class), icon(optional can be 0), layout_id( optional can be 0)
-   ```
+ ```
    categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_EDIT_TEXT, EDIT_TEXT_PREFERENCE_KEY1, null, "Your Age", "enter your age", InputType.TYPE_CLASS_NUMBER, 0,0));
  ```
  # List or Multi select List Prefernce
@@ -73,6 +73,7 @@ categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, 
  SETTINGS_TYPE_MULTI_SELECT_LIST or SETTINGS_TYPE_LIST , key(explained above), defualt value(optional can be null), title ,summary(optional can be null), 
  icon (optional can be 0), dialog title(optional can be null), Arraylist<String> enteries, layout_id(optional can be 0)
  entries example : 
+	
 ```
 ArrayList<String> hideStoryTitles = new ArrayList<>();
 hideStoryTitles.add("user 1");
@@ -80,18 +81,19 @@ hideStoryTitles.add("user 2");
 hideStoryTitles.add("user 3");
 hideStoryTitles.add("user 4");
 hideStoryTitles.add("user 5");
-hideStoryTitles.add("user 6");
-	
+hideStoryTitles.add("user 6");	
+
 categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_MULTI_SELECT_LIST, MULTI_SELECT_LIST_PREFERENCE_KEY1, null, "Story", "Hide Story From", 0, "Hide story from", hideStoryTitles,0));
 
- ```
- then you call the create array from Settings class. it creates array of type CategorySettingsClass which has 3 parameters:
- 1. key 2. title 3. array list of items array list.
- ```
- categorySettingsClassArrayList = Settings.createSettingsArray(
- new CategorySettingsClass(CATEGORY_PREFERENCE_KEY1, "Account Privacy", categorySettingsItemsArrayList1),
- new CategorySettingsClass(CATEGORY_PREFERENCE_KEY2, "Interactions", categorySettingsItemsArrayList2));
-
+```
+then you call the create array from Settings class. it creates array of type CategorySettingsClass which has 3 parameters:
+1. key 
+2. title 
+3. array list of items array list.
+```
+categorySettingsClassArrayList = Settings.createSettingsArray(
+new CategorySettingsClass(CATEGORY_PREFERENCE_KEY1, "Account Privacy", categorySettingsItemsArrayList1),
+new CategorySettingsClass(CATEGORY_PREFERENCE_KEY2, "Interactions", categorySettingsItemsArrayList2));
 Settings.initializeSettings(this, categorySettingsClassArrayList);
  ```
  Then, inside your Settings activity layout you create a FrameLayout:
@@ -112,7 +114,6 @@ then, you write this code inside OnCreate Settings Activity
                 .commit();
 ```
 ## if you want to do function while click on a specific preference do the following:
-
 for example, while click on basic prefernce with title security A toast will show with the title.
 ```
  @Subscribe
