@@ -22,7 +22,7 @@ dependencies {
 	}
   ```
 
-## Availbe Settings
+## Available Settings
 each Category Prefernce can contain any of:
  1. Basic Preference
  2. Switch Preference
@@ -72,7 +72,7 @@ input type(Inputtype class), icon(optional can be 0), layout_id( optional can be
  for List/ Multi select List prefernce you enter:
  SETTINGS_TYPE_MULTI_SELECT_LIST or SETTINGS_TYPE_LIST , key(explained above), defualt value(optional can be null), title ,summary(optional can be null), 
  icon (optional can be 0), dialog title(optional can be null), Arraylist<String> enteries, layout_id(optional can be 0)
- entries example : 
+ entries array list example:
 	
 ```
 ArrayList<String> hideStoryTitles = new ArrayList<>();
@@ -94,6 +94,7 @@ then you call the create array from Settings class. it creates array of type Cat
 categorySettingsClassArrayList = Settings.createSettingsArray(
 new CategorySettingsClass(CATEGORY_PREFERENCE_KEY1, "Account Privacy", categorySettingsItemsArrayList1),
 new CategorySettingsClass(CATEGORY_PREFERENCE_KEY2, "Interactions", categorySettingsItemsArrayList2));
+
 Settings.initializeSettings(this, categorySettingsClassArrayList);
  ```
  Then, inside your Settings activity layout you create a FrameLayout:
