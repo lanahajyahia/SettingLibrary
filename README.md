@@ -31,9 +31,9 @@ each Category Prefernce can contain any of:
  5. Multi-Select List Prefernce 
  
  ## How to Use the Library (see my sample app)
- First of, you need to create activity Settings. and Arraylists of <ItemSettingsClass> and <CategorySettingsClass> dependes on the kind of settings prefernce you want
- to iclude your settings page with. you must declare final Static varibales for each Preference to set the key of it so the Library recognize
- each one of them. and save in sharedpreference.
+ First of, you need to create activity Settings. and Arraylists of <ItemSettingsClass> and <CategorySettingsClass> dependes on the kind of settings preference you want
+ to iclude your settings page with. you must declare final Static String varibales for each Preference to set the key of it so the Library recognize
+ each one of them. and save in shared preference.
  
  for Example
  ```
@@ -55,16 +55,16 @@ each Category Prefernce can contain any of:
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_BASIC, BASIC_PREFERENCE_KEY2, "About", null, R.drawable.about,R.layout.basic_pref_layout));
  ```
   # Switch prefernce
-  for switch prefernce you enter:
-  SETTINGS_TYPE_SWITCH, key(explained above), defualt value, title, title in off case(optional can be null), summary(optional can be null), 
-  icon(optional can be 0), layout_id(optional can be 0)
+for switch prefernce you enter:
+SETTINGS_TYPE_SWITCH, key(explained above), defualt value, title, title in off case(optional can be null), summary(optional can be null), 
+icon(optional can be 0), layout_id(optional can be 0)
   ```
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY2, false, "Private Account", null, null, R.drawable.padlock,0));
  ```
-   # Edit Text Prefernce
-  for Edit Text prefernce you enter:
-  SETTINGS_TYPE_EDIT_TEXT, key(explained above), defualt value(optional can be null) ,title ,summary(optional can be null), 
-  input type(Inputtype class), icon(optional can be 0), layout_id( optional can be 0)
+ # Edit Text Prefernce
+for Edit Text prefernce you enter:
+SETTINGS_TYPE_EDIT_TEXT, key(explained above), defualt value(optional can be null) ,title ,summary(optional can be null), 
+input type(Inputtype class), icon(optional can be 0), layout_id( optional can be 0)
  ```
    categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_EDIT_TEXT, EDIT_TEXT_PREFERENCE_KEY1, null, "Your Age", "enter your age", InputType.TYPE_CLASS_NUMBER, 0,0));
  ```
