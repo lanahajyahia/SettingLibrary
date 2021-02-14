@@ -47,28 +47,28 @@ each Category Prefernce can contain any of:
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList1 = new ArrayList<>();
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList2 = new ArrayList<>();
   ```
-  # Basic prefernce
+  # Basic preference
  for basic prefernce you enter:
  SETTINGS_TYPE_BASIC, key(explained above), title, summary(optional can be null), summary(optional can be null), 
  icon(optional can be 0), layout_id(optional can be 0)
  ```
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_BASIC, BASIC_PREFERENCE_KEY2, "About", null, R.drawable.about,R.layout.basic_pref_layout));
  ```
-  # Switch prefernce
+  # Switch preference
 for switch prefernce you enter:
 SETTINGS_TYPE_SWITCH, key(explained above), defualt value, title, title in off case(optional can be null), summary(optional can be null), 
 icon(optional can be 0), layout_id(optional can be 0)
   ```
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY2, false, "Private Account", null, null, R.drawable.padlock,0));
  ```
- # Edit Text Prefernce
+ # Edit Text Preference
 for Edit Text prefernce you enter:
 SETTINGS_TYPE_EDIT_TEXT, key(explained above), defualt value(optional can be null) ,title ,summary(optional can be null), 
 input type(Inputtype class), icon(optional can be 0), layout_id( optional can be 0)
  ```
    categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_EDIT_TEXT, EDIT_TEXT_PREFERENCE_KEY1, null, "Your Age", "enter your age", InputType.TYPE_CLASS_NUMBER, 0,0));
  ```
- # List or Multi select List Prefernce
+ # List or Multi select List Preference
  for List/ Multi select List prefernce you enter:
  SETTINGS_TYPE_MULTI_SELECT_LIST or SETTINGS_TYPE_LIST , key(explained above), defualt value(optional can be null), title ,summary(optional can be null), 
  icon (optional can be 0), dialog title(optional can be null), Arraylist<String> enteries, layout_id(optional can be 0)
