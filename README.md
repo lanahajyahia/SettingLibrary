@@ -37,7 +37,7 @@ each Category Prefernce can contain any of:
  
  for Example
  ```
-  public static final String SWITCH_PREFERENCE_KEY1 = "switch1";
+    public static final String SWITCH_PREFERENCE_KEY1 = "switch1";
     public static final String SWITCH_PREFERENCE_KEY2 = "switch2";
     public static final String BASIC_PREFERENCE_KEY1 = "basic1";
     public static final String BASIC_PREFERENCE_KEY2 = "basic2";
@@ -48,30 +48,45 @@ each Category Prefernce can contain any of:
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList2 = new ArrayList<>();
   ```
   # Basic prefernce
-  for basic prefernce you enter: SETTINGS_TYPE_BASIC, key(explained below),  title, summary (optional can be null),summary (optional can be null), 
+  for basic prefernce you enter: SETTINGS_TYPE_BASIC, key(explained above),  title, summary (optional can be null),summary (optional can be null), 
   icon (optional can be 0), layout_id ( optional can be 0)
  ```
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_BASIC, BASIC_PREFERENCE_KEY2, "About", null, R.drawable.about,R.layout.basic_pref_layout));
  ```
   # Switch prefernce
-  for switch prefernce you enter: SETTINGS_TYPE_SWITCH, key(explained below), defualt value , title, title in off case(optional can be null),summary (optional can be null), 
+  for switch prefernce you enter: SETTINGS_TYPE_SWITCH, key(explained above), defualt value , title, title in off case(optional can be null),summary (optional can be null), 
   icon (optional can be 0), layout_id ( optional can be 0)
    ```
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY2, false, "Private Account", null, null, R.drawable.padlock,0));
  ```
    # Edit Text Prefernce
-  for switch prefernce you enter: SETTINGS_TYPE_EDIT_TEXT, key(explained below), defualt value(optional can be null) , title ,summary (optional can be null), 
+  for switch prefernce you enter: SETTINGS_TYPE_EDIT_TEXT, key(explained above), defualt value(optional can be null) , title ,summary (optional can be null), 
   edt_txt_input_type(Inputtype class), icon (optional can be 0), layout_id ( optional can be 0)
    ```
-   categorySettingsItemsArrayList3.add(new ItemSettingsClass(SETTINGS_TYPE_EDIT_TEXT, EDIT_TEXT_PREFERENCE_KEY1, null, "Your Age", "enter your age", InputType.TYPE_CLASS_NUMBER, 0,0));
+   categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_EDIT_TEXT, EDIT_TEXT_PREFERENCE_KEY1, null, "Your Age", "enter your age", InputType.TYPE_CLASS_NUMBER, 0,0));
  ```
- 
- 
-  ```
-categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY1, true, "turn on post notification", "turn off notification", "notification manger", R.drawable.notification,0));
-categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_LIST, LIST_PREFERENCE_KEY1, mentionsTitles.get(0), "Mentions", null, R.drawable.contact, "Allow @mentions From", mentionsTitles,0));
-categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_LIST, LIST_PREFERENCE_KEY2, likesTitles.get(2), "Likes", null, 0, "Allow Likes From", likesTitles,0));
+ # List or Multi select List Prefernce
+ for List/ Multi select List prefernce you enter:
+ SETTINGS_TYPE_MULTI_SELECT_LIST or SETTINGS_TYPE_LIST , key(explained above), defualt value(optional can be null) , title ,summary (optional can be null), 
+  icon (optional can be 0), dialog title(optional can be null),Arraylist<String> enteries , layout_id ( optional can be 0)
+	enries example : 
+	```
+	ArrayList<String> hideStoryTitles = new ArrayList<>();
+        hideStoryTitles.add("user 1");
+        hideStoryTitles.add("user 2");
+        hideStoryTitles.add("user 3");
+        hideStoryTitles.add("user 4");
+        hideStoryTitles.add("user 5");
+        hideStoryTitles.add("user 6");
+	```
+	
+   ```
+categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_MULTI_SELECT_LIST, MULTI_SELECT_LIST_PREFERENCE_KEY1, null, "Story", "Hide Story From", 0, "Hide story from", hideStoryTitles,0));
 
+ ```
+ then you call the create array from Settings class. it creates array of type CategorySettingsClass which has 3 parameters:
+ 1. key 2. title 3. array list of items array list.
+ ```
  categorySettingsClassArrayList = Settings.createSettingsArray(
  new CategorySettingsClass(CATEGORY_PREFERENCE_KEY1, "Account Privacy", categorySettingsItemsArrayList1),
  new CategorySettingsClass(CATEGORY_PREFERENCE_KEY2, "Interactions", categorySettingsItemsArrayList2));
