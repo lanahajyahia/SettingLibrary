@@ -4,6 +4,8 @@
 
 Android Library that arranges Settings Page based on user passed information, using Preference android Library. The settings screen will contain a Preference hierarchy.
 The Settings page will contain Preference Categories and inside each category a Preference dependes on your choice.
+![demo](C:\Users\hajya\Desktop\andriod)
+
 
 ## Setup
 Step 1. Add it in your root build.gradle at the end of repositories:
