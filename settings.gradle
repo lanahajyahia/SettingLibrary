@@ -1,0 +1,3 @@
+include ':mySettingslibrary'
+include ':app'
+rootProject.name = "SettingLibraryApp2021"
