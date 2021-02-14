@@ -46,12 +46,27 @@ each Category Prefernce can contain any of:
  ```
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList1 = new ArrayList<>();
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList2 = new ArrayList<>();
-  
   ```
-  # switch prefernce
+  # Basic prefernce
+  for basic prefernce you enter: SETTINGS_TYPE_BASIC, key(explained below),  title, summary (optional can be null),summary (optional can be null), 
+  icon (optional can be 0), layout_id ( optional can be 0)
+ ```
+categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_BASIC, BASIC_PREFERENCE_KEY2, "About", null, R.drawable.about,R.layout.basic_pref_layout));
+ ```
+  # Switch prefernce
+  for switch prefernce you enter: SETTINGS_TYPE_SWITCH, key(explained below), defualt value , title, title in off case(optional can be null),summary (optional can be null), 
+  icon (optional can be 0), layout_id ( optional can be 0)
    ```
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY2, false, "Private Account", null, null, R.drawable.padlock,0));
  ```
+   # Edit Text Prefernce
+  for switch prefernce you enter: SETTINGS_TYPE_EDIT_TEXT, key(explained below), defualt value(optional can be null) , title ,summary (optional can be null), 
+  edt_txt_input_type(Inputtype class), icon (optional can be 0), layout_id ( optional can be 0)
+   ```
+   categorySettingsItemsArrayList3.add(new ItemSettingsClass(SETTINGS_TYPE_EDIT_TEXT, EDIT_TEXT_PREFERENCE_KEY1, null, "Your Age", "enter your age", InputType.TYPE_CLASS_NUMBER, 0,0));
+ ```
+ 
+ 
   ```
 categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY1, true, "turn on post notification", "turn off notification", "notification manger", R.drawable.notification,0));
 categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_LIST, LIST_PREFERENCE_KEY1, mentionsTitles.get(0), "Mentions", null, R.drawable.contact, "Allow @mentions From", mentionsTitles,0));
