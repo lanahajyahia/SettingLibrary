@@ -30,9 +30,19 @@ each Category Prefernce can contain any of:
  4. List Preference
  5. Multi-Select List Prefernce 
  
- ## How to Use the Library
- First of, you need to create activity Settings. and Arraylists of ItemSettingsClass and CategorySettingsClass dependes on the kind of settings prefernce you want
- to iclude your settings page with.
+ ## How to Use the Library (see my sample app)
+ First of, you need to create activity Settings. and Arraylists of <ItemSettingsClass> and <CategorySettingsClass> dependes on the kind of settings prefernce you want
+ to iclude your settings page with. you must declare final Static varibales for each Preference to set the key of it so the Library recognize
+ each one of them. and save in sharedpreference.
+ 
+ for Example
+ ```
+  public static final String SWITCH_PREFERENCE_KEY1 = "switch1";
+    public static final String SWITCH_PREFERENCE_KEY2 = "switch2";
+    public static final String BASIC_PREFERENCE_KEY1 = "basic1";
+    public static final String BASIC_PREFERENCE_KEY2 = "basic2";
+ ```
+ and then,
  ```
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList1 = new ArrayList<>();
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList2 = new ArrayList<>();
@@ -64,4 +74,30 @@ then, you write this code inside OnCreate Settings Activity
                 .beginTransaction()
                 .replace(R.id.settings_container, new MainSettingsFragment())
                 .commit();
+```
+## if you want to do function while click on a specific preference do the following:
+
+for example, while click on basic prefernce with title security A toast will show with the title.
+```
+ @Subscribe
+    public void onBasicSettingsClicked(SettingsClickEvent event) {
+        if (event.getClickedSettingsObj()
+                .getKey()
+                .equals(BASIC_PREFERENCE_KEY1)) {
+            Toast.makeText(this, event.getClickedSettingsObj().getTitle(), Toast.LENGTH_SHORT).show();
+ }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
 ```
