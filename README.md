@@ -5,7 +5,7 @@
 Android Library that arranges Settings Page based on user passed information, using Preference android Library. The settings screen will contain a Preference hierarchy.
 The Settings page will contain Preference Categories and inside each category a Preference dependes on your choice.
 
-##Setup
+## Setup
 Step 1. Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
@@ -22,7 +22,7 @@ dependencies {
 	}
   ```
 
-##Availbe Settings
+## Availbe Settings
 each Category Prefernce can contain any of:
  1. Basic Preference
  2. Switch Preference
@@ -30,7 +30,7 @@ each Category Prefernce can contain any of:
  4. List Preference
  5. Multi-Select List Prefernce 
  
- #How to Use the Library
+ ## How to Use the Library
  First of, you need to create activity Settings. and Arraylists of ItemSettingsClass and CategorySettingsClass dependes on the kind of settings prefernce you want
  to iclude your settings page with.
  ```
