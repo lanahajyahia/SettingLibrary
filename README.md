@@ -19,6 +19,6 @@ allprojects {
 Step 2. Add the dependency:
 ```
 dependencies {
-	        implementation 'com.github.lanahajyahia:SettingLibrary:Tag'
+	        implementation 'com.github.lanahajyahia:SettingLibrary:1.00.01'
 	}
   ```
