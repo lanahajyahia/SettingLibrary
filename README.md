@@ -48,7 +48,7 @@ each Category Prefernce can contain any of:
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList2 = new ArrayList<>();
   ```
   # Basic prefernce
-  for basic prefernce you enter:
+ for basic prefernce you enter:
  SETTINGS_TYPE_BASIC, key(explained above), title, summary(optional can be null), summary(optional can be null), 
  icon(optional can be 0), layout_id(optional can be 0)
  ```
@@ -115,8 +115,9 @@ then, you write this code inside OnCreate Settings Activity
 ```
 ## if you want to do function while click on a specific preference do the following:
 for example, while click on basic prefernce with title security A toast will show with the title.
+I used the event bus Library to transfer clicked Preference between the Settings Library and Settings Activity.
 ```
- @Subscribe
+    @Subscribe
     public void onBasicSettingsClicked(SettingsClickEvent event) {
         if (event.getClickedSettingsObj()
                 .getKey()
