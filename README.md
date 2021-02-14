@@ -46,8 +46,13 @@ each Category Prefernce can contain any of:
  ```
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList1 = new ArrayList<>();
  ArrayList<ItemSettingsClass> categorySettingsItemsArrayList2 = new ArrayList<>();
-       
+  
+  ```
+  # switch prefernce
+   ```
 categorySettingsItemsArrayList1.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY2, false, "Private Account", null, null, R.drawable.padlock,0));
+ ```
+  ```
 categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_SWITCH, SWITCH_PREFERENCE_KEY1, true, "turn on post notification", "turn off notification", "notification manger", R.drawable.notification,0));
 categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_LIST, LIST_PREFERENCE_KEY1, mentionsTitles.get(0), "Mentions", null, R.drawable.contact, "Allow @mentions From", mentionsTitles,0));
 categorySettingsItemsArrayList2.add(new ItemSettingsClass(SETTINGS_TYPE_LIST, LIST_PREFERENCE_KEY2, likesTitles.get(2), "Likes", null, 0, "Allow Likes From", likesTitles,0));
