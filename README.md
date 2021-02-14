@@ -3,7 +3,8 @@
 [![](https://jitpack.io/v/lanahajyahia/SettingLibrary.svg)](https://jitpack.io/#lanahajyahia/SettingLibrary)
 
 Android Library that arranges Settings Page based on user passed information, using Preference android Library. The settings screen will contain a Preference hierarchy.
-The Settings page will contain Preference Categories and inside each category a Preference dependes on your choice.
+The Settings page will contain Preference Categories and inside each category a Preference dependes on your choice. 
+you can also make your own structured layout for each settings item.
 
 ![](assets/gifSettings.gif)
 
