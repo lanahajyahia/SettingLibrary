@@ -5,7 +5,7 @@
 Android Library that arranges Settings Page based on user passed information, using Preference android Library. The settings screen will contain a Preference hierarchy.
 The Settings page will contain Preference Categories and inside each category a Preference dependes on your choice.
 
-![](gifSettings.gif)
+![](file:///C:/Users/hajya/Desktop/andriod/gifSettings.gif)
 
 
 ## Setup
